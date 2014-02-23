@@ -1,0 +1,20 @@
+{
+    "context": "client",
+    "identifier": "com.pa.LavaSnake.StargateBugFix",
+    "display_name": "Stargate Name Bug Fix",
+    "description": "PA has a bug that prevents it from displaying the Stargate's proper name; this mod fixes that.",
+    "author": "LavaSnake",
+    "version": "1.0",
+    "build": "59549",
+    "date": "2014/01/20",
+    "signature": "not yet implemented",
+    "forum": "https://forums.uberent.com/threads/rel-stargate-name-bug-fix-59549.55850/",
+    "category": [
+        "In-game",
+        "ui"
+    ],
+    "id": "LavaSnakes_StargateBugFix",
+    "priority": 100,
+	"icon": "http://pamods.github.io/icons/StargateBugFix.png",
+    "enabled": true
+}
