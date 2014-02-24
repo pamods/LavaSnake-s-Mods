@@ -16,7 +16,7 @@ $(function () {
 			if (!window.localStorage.LProfilePic_URL) {
 				//No user name saved, find Uber forums pic and use instead
 				
-				var Username = model.displayName();
+				var Username = model.uberName();
 				var xhr = new XMLHttpRequest();
 				xhr.open("GET", "https://forums.uberent.com/members/?username=" + Username, false);
 				xhr.send();
