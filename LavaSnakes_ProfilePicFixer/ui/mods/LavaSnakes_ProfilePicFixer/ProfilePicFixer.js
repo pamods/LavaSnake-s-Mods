@@ -3,7 +3,19 @@ $(function () {
 	var elements = document.getElementsByClassName("div_start_menu_profile_pic");
 
 	if (!window.localStorage.LProfilePic_URL) {
-		window.localStorage.LProfilePic_URL = "";
+		//No user name saved, find Uber forums pic and use instead
+		
+		var Username = model.displayName();
+		var xhr = new XMLHttpRequest();
+		xhr.open("GET", "https://forums.uberent.com/members/?username=" + Username, false);
+		xhr.send();
+		
+		var idLoc = xhr.responseText.indexOf("<link rel=\"canonical\" href=\"https://forums.uberent.com/members/") + 66;
+		idLoc = xhr.responseText.indexOf(".", idLoc) + 1;
+		var id = xhr.responseText.substring(idLoc, xhr.responseText.indexOf("\"", idLoc) - 1);
+		console.log("Pic found to use as default: https://forums.uberent.com/data/avatars/l/1943/" + id + ".jpg");
+
+		window.localStorage.LProfilePic_URL = "https://forums.uberent.com/data/avatars/l/1943/" + id + ".jpg";
 	}
 
 	$('body').append('<span id="PicConfigSpan"></span>');
