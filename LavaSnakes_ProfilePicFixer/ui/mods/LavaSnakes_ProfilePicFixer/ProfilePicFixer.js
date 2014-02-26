@@ -21,12 +21,10 @@ $(function () {
 				xhr.open("GET", "https://forums.uberent.com/members/?username=" + Username, false);
 				xhr.send();
 				
-				var idLoc = xhr.responseText.indexOf("<link rel=\"canonical\" href=\"https://forums.uberent.com/members/") + 66;
-				idLoc = xhr.responseText.indexOf(".", idLoc) + 1;
-				var id = xhr.responseText.substring(idLoc, xhr.responseText.indexOf("/", idLoc));
-				console.log("LProfilePic: Pic found to use as default: https://forums.uberent.com/data/avatars/l/" + id.substr(0, 4) + "/" + id + ".jpg");
-
-				window.localStorage.LProfilePic_URL = "https://forums.uberent.com/data/avatars/l/" + id.substr(0, 4) + "/" + id + ".jpg";
+				//and a big thanks to raevn for these two lines...
+				var picHTML = $(xhr.responseText).find(".avatarScaler").find("img");
+				var url = picHTML.attr("src");
+				window.localStorage.LProfilePic_URL = "https://forums.uberent.com/" + url;
 			}
 			if (!window.localStorage.LProfilePic_ShowPAS) {
 				window.localStorage.LProfilePic_ShowPAS = "true";
