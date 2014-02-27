@@ -24,7 +24,15 @@ $(function () {
 				//and a big thanks to raevn for these two lines...
 				var picHTML = $(xhr.responseText).find(".avatarScaler").find("img");
 				var url = picHTML.attr("src");
-				window.localStorage.LProfilePic_URL = "https://forums.uberent.com/" + url;
+				
+				if (url) {
+					window.localStorage.LProfilePic_URL = "https://forums.uberent.com/" + url;
+					console.log("LProfilePic: Default pic URL found: " + window.localStorage.LProfilePic_URL);
+				} else {
+					console.log("LProfilePic: Can't find default pic URL. Telling user to figure it out.");
+					window.localStorage.LProfilePic_URL = "";
+					window.setTimeout(function(){ document.getElementsByClassName("div_start_menu_profile_pic")[0].click(); }, 500);
+				}
 			}
 			if (!window.localStorage.LProfilePic_ShowPAS) {
 				window.localStorage.LProfilePic_ShowPAS = "true";
