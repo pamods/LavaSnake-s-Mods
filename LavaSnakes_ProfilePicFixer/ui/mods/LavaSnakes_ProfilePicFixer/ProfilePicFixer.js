@@ -71,11 +71,11 @@ $(function () {
 			//Add other UI
 			initialSettingValue("LProfilePic_Sig", "");
 			initialSettingValue("LProfilePic_HTML", "");
-			if (settings.LProfilePic_Sig != "" && !settings.LProfilePic_Sig) {
+			if (settings.LProfilePic_Sig != "" && settings.LProfilePic_Sig != null) {
 				$("#logo_menu").append('<img style="margin: 10px; width: 99%; padding: 3px; border: 3px; -webkit-background-clip: border-box; -webkit-background-origin: padding-box; -webkit-background-size: auto;  -webkit-border-image: url(coui://ui/alpha/start/img/btn_start_menu_rect_rest.png) 10 14 18 / 1 / 0px stretch; -webkit-box-shadow: rgb(13, 13, 13) 1000px 1000px 1000px 1000px inset; margin-bottom: 0px;" src="' + settings.LProfilePic_Sig + '" align="center">');
 			}
 			
-			if (settings.LProfilePic_HTML != "" && !settings.LProfilePic_HTML) {
+			if (settings.LProfilePic_HTML != "" && settings.LProfilePic_HTML != null) {
 				$("#menu_cont").append("<div style='margin: 10px;'>" + settings.LProfilePic_HTML + "</div>");
 			}
 			console.log("LProfilePic: Other UI added.");
