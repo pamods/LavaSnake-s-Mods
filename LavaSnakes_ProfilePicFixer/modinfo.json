@@ -4,9 +4,9 @@
     "display_name": "ProfilePic+",
     "description": "A powerful mod that lets you set a profile picture, a tracking/sig picture, and custom HTML snippets for PA's main menu.",
     "author": "LavaSnake",
-    "version": "2.0",
-    "build": "62350",
-    "date": "2014/03/06",
+    "version": "2.1",
+    "build": "62857",
+    "date": "2014/03/16",
     "signature": "not yet implemented",
     "forum": "https://forums.uberent.com/threads/rel-profile-pic-fixer-56387.53531/",
     "category": [
@@ -24,6 +24,6 @@
     "requires": [
         "rSettingsManager"
     ],
-	"icon": "http://pamods.github.io/icons/ProfilePicFixer.png",
+    "icon": "http://pamods.github.io/icons/ProfilePicFixer.png",
     "enabled": true
 }

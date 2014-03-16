@@ -2,6 +2,7 @@
 $(function () {
 	//Save displayName for setting menu
 	window.localStorage.LProfilePic_displayName = model.displayName();
+	window.localStorage.LProfilePic_UberName = model.uberName();
 	
 	var settings = decode(localStorage.settings);
 	
