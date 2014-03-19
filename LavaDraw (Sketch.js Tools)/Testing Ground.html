@@ -2,15 +2,17 @@
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script src="sketch.js"></script>
 <script src="LavaDraw.js"></script>
-<div class="tools">
-	<a href="#tools_sketch" data-tool="marker">Marker</a>
-	<a href="#tools_sketch" data-tool="eraser">Eraser</a>
-	LavaDraw Tools:
-	<a href="#tools_sketch" data-tool="arrow">Arrow</a>	
-</div>
-<canvas id="tools_sketch" width="800" height="300" style="background: url(http://farm1.static.flickr.com/91/239595759_3c3626b24a_b.jpg) no-repeat center center;"></canvas>
+
+<a href="#tools_sketch" data-tool="marker">Marker</a>
+<a href="#tools_sketch" data-tool="eraser">Eraser</a>
+<br />LavaDraw Tools:
+<a href="#tools_sketch" data-tool="arrow">Arrow</a>
+
+<br />
+<canvas id="tools_sketch" width="1000" height="500" style="background: url(http://www.uberent.com/pa/wp-content/uploads/sites/2/2014/02/unnamed.jpg) no-repeat center center;"></canvas>
+
 <script type="text/javascript">
 	$(function() {
-		$('#tools_sketch').sketch({defaultColor: "#ff0"});
+		$('#tools_sketch').sketch({defaultColor: "#f00"});
 	});
 </script>
