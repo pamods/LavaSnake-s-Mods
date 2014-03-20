@@ -7,7 +7,7 @@ $(function () {
 	var settings = decode(localStorage.settings);
 	
 	//Wait for user to sign in
-	var refreshIntervalId = setInterval(function(){
+	var refreshIntervalId = setInterval(function () {
 		console.log("LProfilePic: Waiting for sign in");
 		
 		if (model.displayName() != "") {
