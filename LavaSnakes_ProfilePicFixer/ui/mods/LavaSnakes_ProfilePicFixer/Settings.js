@@ -39,7 +39,7 @@ model.LProfilePic_GetPicURL = function () {
 model.LProfilePic_GetPSLadder = function () {
 	var Username = window.localStorage.LProfilePic_UberName;
 	var xhr = new XMLHttpRequest();
-	xhr.open("GET", "http://nanodesu.info/pastats/report/getplayerid?ubername=" + Username, false);
+	xhr.open("GET", "http://pastats.com/report/getplayerid?ubername=" + Username, false);
 	xhr.send();
 	
 	var Output = xhr.responseText;
