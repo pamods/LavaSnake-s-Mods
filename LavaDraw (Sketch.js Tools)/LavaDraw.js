@@ -1,6 +1,6 @@
 //------------ LavaDraw ------------ 
 	//Info: A set of Sketch.js tools by LavaSnake. LavaDraw was written for use by cptconundrum in the Sketch.js mod for PA casters.
-	//Version: 1.0
+	//Version: 1.1
 	//URL: https://github.com/pamods/LavaSnake-s-Mods/tree/master/LavaDraw%20(Sketch.js%20Tools)
 	//Included Tools: "arrow" A basic arrow with an auto-added head, "stamp" An image stamp with a changeable image setting
 
@@ -29,8 +29,8 @@ $.sketch.tools.arrow = {
 			case 'touchcancel':
 				if (this.action) {
 					//Calculate arrow head direction
-					var x = e.pageX - this.canvas.offset().left;
-					var y = e.pageY - this.canvas.offset().top;
+					var x = Xs[Xs.length - 1];
+					var y = Ys[Ys.length - 1];
 					var oldX = x;
 					var oldY = y;
 					var count = Xs.length;
@@ -169,7 +169,9 @@ $.sketch.tools.stamp = {
             var context = this.context;
             var imageObj = new Image();
             imageObj.onload = function() {
-                context.drawImage(imageObj, event.x, event.y);
+				var OffsetX = imageObj.width / 2;
+				var OffsetY = imageObj.height / 2;
+                context.drawImage(imageObj, event.x - OffsetX, event.y - OffsetY);
             };
             imageObj.src = event.img;
 
