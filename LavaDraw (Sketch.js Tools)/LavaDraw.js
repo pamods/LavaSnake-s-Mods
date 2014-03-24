@@ -28,7 +28,7 @@ $.sketch.tools.arrow = {
 			case 'touchend':
 			case 'touchcancel':
 				if (this.action) {
-					//Calculate to draw arrow head direction
+					//Calculate arrow head direction
 					var x = e.pageX - this.canvas.offset().left;
 					var y = e.pageY - this.canvas.offset().top;
 					var oldX = x;
@@ -77,7 +77,7 @@ $.sketch.tools.arrow = {
 						}
 					}
 					
-					//Add custom event to action
+					//Add custom event to action with arrow head data
 					this.action.events.push({
 						x: x,
 						y: y,
@@ -121,6 +121,7 @@ $.sketch.tools.arrow = {
 				
 				this.context.moveTo(event.x, event.y);
 			} else {
+				//Draw line
 				this.context.lineTo(event.x, event.y);
 			}
 			previous = event;
@@ -132,7 +133,7 @@ $.sketch.tools.arrow = {
 };
 
 //Image Stamp, set the image used by the stamp in the LavaDraw object
-//This tool is by cptconundrum with edits by LavaSnake
+//This tool is by cptconundrum with improvements by LavaSnake
 $.sketch.tools.stamp = {
     onEvent: function(e) {
         switch (e.type) {
@@ -148,6 +149,7 @@ $.sketch.tools.stamp = {
 				this.stopPainting();
         }
         if (this.painting) {
+			//Save image action with current image setting
             this.action.events.push({
                 x: e.pageX - this.canvas.offset().left,
                 y: e.pageY - this.canvas.offset().top,
@@ -163,6 +165,7 @@ $.sketch.tools.stamp = {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             event = _ref[_i];
 
+			//Draw image to canvas
             var context = this.context;
             var imageObj = new Image();
             imageObj.onload = function() {
