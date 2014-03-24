@@ -3,16 +3,18 @@
 <script src="sketch.js"></script>
 <script src="LavaDraw.js"></script>
 
-<a href="#tools_sketch" data-tool="marker">Marker</a>
-<a href="#tools_sketch" data-tool="eraser">Eraser</a>
+<a href="#cSketchJS" data-tool="marker">Marker</a>
+<a href="#cSketchJS" data-tool="eraser">Eraser</a>
 <br />LavaDraw Tools:
-<a href="#tools_sketch" data-tool="arrow">Arrow</a>
+<a href="#cSketchJS" data-tool="arrow">Arrow</a>
+<a href="#cSketchJS" data-tool="stamp">Stamp</a>
 
 <br />
-<canvas id="tools_sketch" width="1000" height="500" style="background: url(http://www.uberent.com/pa/wp-content/uploads/sites/2/2014/02/unnamed.jpg) no-repeat center center;"></canvas>
+<canvas id="cSketchJS" width="1000" height="500" style="background: url(http://www.uberent.com/pa/wp-content/uploads/sites/2/2014/02/unnamed.jpg) no-repeat center center;"></canvas>
 
 <script type="text/javascript">
+	var SketchRef;
 	$(function() {
-		$('#tools_sketch').sketch({defaultColor: "#f00"});
+		SketchRef = $('#cSketchJS').sketch({defaultColor: "#f00"});
 	});
 </script>

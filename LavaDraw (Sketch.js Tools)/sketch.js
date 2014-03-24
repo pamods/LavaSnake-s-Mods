@@ -34,7 +34,7 @@ var __slice = Array.prototype.slice;
       this.context = el.getContext('2d');
       this.options = $.extend({
         toolLinks: true,
-        defaultTool: 'marker',
+        defaultTool: 'arrow',
         defaultColor: '#000000',
         defaultSize: 5
       }, opts);
