@@ -1,0 +1,19 @@
+{
+    "context": "client",
+    "identifier": "com.pa.LavaSnake.Ant",
+    "display_name": "Ant Name Bug Fix",
+    "description": "PA has a bug that prevents it from displaying the Ant's proper name; this mod fixes that.",
+    "author": "LavaSnake",
+    "version": "1.0",
+    "build": "63475",
+    "date": "2014/03/27",
+    "signature": "not yet implemented",
+    "forum": "https://forums.uberent.com/threads/unit-cannon-added-into-the-game.58289/page-2#post-904289",
+    "category": [
+        "In-game",
+        "ui"
+    ],
+    "id": "LavaSnakes_Ant",
+    "priority": 100,
+    "enabled": true
+}
