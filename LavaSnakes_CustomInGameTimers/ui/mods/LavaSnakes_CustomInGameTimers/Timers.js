@@ -226,7 +226,7 @@ function LTimers_Config(Which) {
 	document.getElementById('TimerLTimers_ConfigSpan').innerHTML = 
 		'<div style="margin: 0px auto; position: absolute; background: rgba(0,0,0,.5); padding: 10px; left: 20px; top: 200px; right: 20px; height: 300px; width: 250px; border: 1px solid rgba(255,255,255,.1);	border-radius: 4px;">' +
 			'<div style="margin: 0px 0px 4px 0px; font-weight: bold; font-size: 1.2em;"> COnNIGURATION FOR TIMER ' + Which + 
-				'<a data-bind="click_sound: \'default\'" onclick="document.getElementById(\'TimerLTimers_ConfigSpan\').innerHTML = \'\';"><img style="float:right;" src="../shared/img/close_btn.png"></a>' +
+				'<a data-bind="click_sound: \'default\'" onclick="document.getElementById(\'TimerLTimers_ConfigSpan\').innerHTML = \'\';"><img style="float:right;" src="../../main/shared/img/close_btn.png"></a>' +
 			'</div>' +
 			'<p>Mode: ' +
 				'<select onchange="window.localStorage.LTimers_Timer' + Which + 'Type = this.options[this.selectedIndex].value;">' +
