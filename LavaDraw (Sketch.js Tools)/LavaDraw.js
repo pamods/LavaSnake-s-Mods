@@ -2,7 +2,7 @@
 	//Info: A set of Sketch.js tools by LavaSnake. LavaDraw was written for use by cptconundrum in the Sketch.js mod for PA casters.
 	//Version: 1.3
 	//URL: https://github.com/pamods/LavaSnake-s-Mods/tree/master/LavaDraw%20(Sketch.js%20Tools)
-	//Included Tools: "arrow" A basic arrow with an auto-added head, "stamp" An image stamp with a changeable image setting
+	//Included Tools: "arrow" A basic arrow with an auto-added head, "stamp" An image stamp with a changeable image setting, "circle" A click and drag-to-resize style circle tool
 
 //Global LavaDraw Settings - Edit to change tool options
 var LavaDraw = {};
@@ -159,68 +159,68 @@ $.sketch.tools.arrow = {
 //Image Stamp, set the image used by the stamp in the LavaDraw object
 //This tool is by cptconundrum with improvements by LavaSnake
 $.sketch.tools.stamp = {
-    onEvent: function(e) {
-        switch (e.type) {
-            case 'mousedown':
-            case 'touchstart':
-                this.startPainting();
-                break;
-            case 'mouseup':
-            case 'mouseout':
-            case 'mouseleave':
-            case 'touchend':
-            case 'touchcancel':
+	onEvent: function(e) {
+		switch (e.type) {
+			case 'mousedown':
+			case 'touchstart':
+				this.startPainting();
+				break;
+			case 'mouseup':
+			case 'mouseout':
+			case 'mouseleave':
+			case 'touchend':
+			case 'touchcancel':
 				this.stopPainting();
-        }
-        if (this.painting) {
+		}
+		if (this.painting) {
 			//Save image action with current image setting
-            this.action.events[0] = ({
-                x: e.pageX - this.canvas.offset().left,
-                y: e.pageY - this.canvas.offset().top,
-                event: e.type,
+			this.action.events[0] = ({
+				x: e.pageX - this.canvas.offset().left,
+				y: e.pageY - this.canvas.offset().top,
+				event: e.type,
 				img: LavaDraw.StampImg
-            });
-            return this.redraw();
-        }
-    },
-    draw: function(action) {
-        var event, previous, _i, _len, _ref;
-        _ref = action.events;
-        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-            event = _ref[_i];
+			});
+			return this.redraw();
+		}
+	},
+	draw: function(action) {
+		var event, previous, _i, _len, _ref;
+		_ref = action.events;
+		for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+			event = _ref[_i];
 
 			//Draw image to canvas
-            var context = this.context;
-            var imageObj = new Image();
-            imageObj.onload = function() {
+			var context = this.context;
+			var imageObj = new Image();
+			imageObj.onload = function() {
 				var OffsetX = imageObj.width / 2;
 				var OffsetY = imageObj.height / 2;
-                context.drawImage(imageObj, event.x - OffsetX, event.y - OffsetY);
-            };
-            imageObj.src = event.img;
+				context.drawImage(imageObj, event.x - OffsetX, event.y - OffsetY);
+			};
+			imageObj.src = event.img;
 
-            previous = event;
-        }
-        return this.context.stroke();
-    }
+			previous = event;
+		}
+		return this.context.stroke();
+	}
 };
 
 //Circle, click and drag to set the radius
 $.sketch.tools.circle = {
-    onEvent: function(e) {
-        switch (e.type) {
-            case 'mousedown':
-            case 'touchstart':
-                this.startPainting();
-                break;
-            case 'mouseup':
-            case 'mouseout':
-            case 'mouseleave':
-            case 'touchend':
-            case 'touchcancel':
+	onEvent: function(e) {
+		switch (e.type) {
+			case 'mousedown':
+			case 'touchstart':
+				this.startPainting();
+				break;
+			case 'mouseup':
+			case 'mouseout':
+			case 'mouseleave':
+			case 'touchend':
+			case 'touchcancel':
 				this.stopPainting();
-        }
-        if (this.painting) {
+		}
+		if (this.painting) {
 			//Save original xy if first time
 			if (!this.action.events[0]) {
 				this.action.events[0] = ({
@@ -235,28 +235,28 @@ $.sketch.tools.circle = {
 			var deltaY = (e.pageY - this.canvas.offset().top) - this.action.events[0].y;
 			var radius = Math.sqrt((deltaX * deltaX) + (deltaY * deltaY));
 			
-            this.action.events[0] = ({
-                x: this.action.events[0].x,
-                y: this.action.events[0].y,
+			this.action.events[0] = ({
+				x: this.action.events[0].x,
+				y: this.action.events[0].y,
 				r: radius,
-                event: e.type
-            });
-            return this.redraw();
-        }
-    },
-    draw: function(action) {
-        var event, previous, _i, _len, _ref;
-        _ref = action.events;
-        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-            event = _ref[_i];
+				event: e.type
+			});
+			return this.redraw();
+		}
+	},
+	draw: function(action) {
+		var event, previous, _i, _len, _ref;
+		_ref = action.events;
+		for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+			event = _ref[_i];
 
 			this.context.beginPath();
 			this.context.arc(event.x, event.y, event.r, 0, 2 * Math.PI);
 
-            previous = event;
-        }
+			previous = event;
+		}
 		this.context.strokeStyle = action.color;
 		this.context.lineWidth = action.size;
-        return this.context.stroke();
-    }
+		return this.context.stroke();
+	}
 };
