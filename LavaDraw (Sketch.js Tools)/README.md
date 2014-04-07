@@ -8,3 +8,4 @@ LavaDraw Change Log:
 	> v1.0 - First version, includes arrow and stamp tools.
 	> v1.1 - Better stamp placement and arrow bug fix.
 	> v1.1.1 - Optimization of stamp tool.
+	> v1.2 - Rewrite of arrow head code.

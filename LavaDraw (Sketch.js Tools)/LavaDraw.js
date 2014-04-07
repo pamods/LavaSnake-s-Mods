@@ -1,12 +1,13 @@
 //------------ LavaDraw ------------ 
 	//Info: A set of Sketch.js tools by LavaSnake. LavaDraw was written for use by cptconundrum in the Sketch.js mod for PA casters.
-	//Version: 1.1.1
+	//Version: 1.2
 	//URL: https://github.com/pamods/LavaSnake-s-Mods/tree/master/LavaDraw%20(Sketch.js%20Tools)
 	//Included Tools: "arrow" A basic arrow with an auto-added head, "stamp" An image stamp with a changeable image setting
 
 //Global LavaDraw Settings - Edit to change tool options
 var LavaDraw = {};
 LavaDraw.StampImg = "https://d3f1e1s5hz92ob.cloudfront.net/asset-version/z91a2e88bb4ecb89d84c97370febce7d9/Content/UberNetSite/images/img_item_detail_delta.png";
+LavaDraw.ArrowHeadSize = 20;
 
 //Basic arrow, uses global Sketch.js line settings
 $.sketch.tools.arrow = {
@@ -29,10 +30,13 @@ $.sketch.tools.arrow = {
 			case 'touchcancel':
 				if (this.action) {
 					//Calculate arrow head direction
+					//(Drawing of what this code does is in Arrow Head Mock-up.png)
 					var x = Xs[Xs.length - 1];
 					var y = Ys[Ys.length - 1];
 					var oldX = x;
 					var oldY = y;
+					
+					//Get XY of a place a little ways back along the arrow
 					var count = Xs.length;
 					while (Math.abs(x - oldX) < 25 && Math.abs(y - oldY) < 25) {
 						count--;
@@ -46,45 +50,72 @@ $.sketch.tools.arrow = {
 						}
 					}
 					
+					//Get length of the sides of the triangle made by XY and oldXY
 					var deltaX = x - oldX;
 					var deltaY = y - oldY;
-					var ArrowHead1X, ArrowHead1Y, ArrowHead2X, ArrowHead2Y;
-					if (Math.abs(deltaX) > Math.abs(deltaY)) {
-						//Line is horizontal
-						ArrowHead1Y =  -15;
-						ArrowHead2Y =  15;
-						if (deltaX > 0) {
-							//Line is left to right
-							ArrowHead1X = -15;
-							ArrowHead2X = -15;
-						} else {
-							//Line is right to left
-							ArrowHead1X = 15;
-							ArrowHead2X = 15;
+					var hypo = Math.sqrt((deltaX * deltaX) + (deltaY * deltaY));
+					
+					//Find arrow's angle from vertical and then the angles of the arrow head lines
+					var ArrowRad = Math.PI - Math.acos(deltaY / hypo);
+					var ArrowHead1Rad = ArrowRad + (Math.PI / 4);
+					var ArrowHead2Rad = ArrowRad - (Math.PI / 4);
+					
+					if (ArrowHead2Rad < 0) {
+						ArrowHead2Rad = (2 * Math.PI) + ArrowHead2Rad;
+					}
+					
+					//Find XY of arrow head lines
+					var ArrowHead1DeltaX = Math.sin(ArrowHead1Rad) * LavaDraw.ArrowHeadSize;
+					var ArrowHead1DeltaY = Math.cos(ArrowHead1Rad) * LavaDraw.ArrowHeadSize;
+					
+					var ArrowHead2DeltaX = Math.sin(ArrowHead2Rad) * LavaDraw.ArrowHeadSize;
+					var ArrowHead2DeltaY = Math.cos(ArrowHead2Rad) * LavaDraw.ArrowHeadSize;
+					
+					//Flip arrow lines if wrong
+					if (deltaX > 0) {
+						ArrowHead1DeltaX = -ArrowHead1DeltaX;
+						ArrowHead2DeltaX = -ArrowHead2DeltaX;
+						if (ArrowHead1DeltaX > 0 && ArrowHead2DeltaX > 0) {
+							//Arrow is flipped on X axis
+							ArrowHead1DeltaX = -ArrowHead1DeltaX;
+							ArrowHead2DeltaX = -ArrowHead2DeltaX;
+							console.log("flip!");
 						}
 					} else {
-						//Line is vertical
-						ArrowHead1X = -15;
-						ArrowHead2X = +15;
-						if (deltaY > 0) {
-							//Line is top to bottom
-							ArrowHead1Y =  -15;
-							ArrowHead2Y =  -15;
-						} else {
-							//Line is bottom to top
-							ArrowHead1Y =  15;
-							ArrowHead2Y =  15;
+						if (ArrowHead1DeltaX < 0 && ArrowHead2DeltaX < 0) {
+							//Arrow is flipped on X axis
+							ArrowHead1DeltaX = -ArrowHead1DeltaX;
+							ArrowHead2DeltaX = -ArrowHead2DeltaX;
+							console.log("flip!");
 						}
 					}
+					if (deltaY > 0) {
+						if (ArrowHead1DeltaY > 0 && ArrowHead2DeltaY > 0) {
+							//Arrow is flipped on Y axis
+							ArrowHead1DeltaY = -ArrowHead1DeltaY;
+							ArrowHead2DeltaY = -ArrowHead2DeltaY;
+							console.log("flip!");
+						}
+					} else {
+						if (ArrowHead1DeltaY < 0 && ArrowHead2DeltaY < 0) {
+							//Arrow is flipped on Y axis
+							ArrowHead1DeltaY = -ArrowHead1DeltaY;
+							ArrowHead2DeltaY = -ArrowHead2DeltaY;
+							console.log("flip!");
+						}
+					}
+					
+					console.log(ArrowRad + " - " + ArrowHead1Rad + ", " + ArrowHead2Rad);
+					console.log("(" + ArrowHead1DeltaX + ", " + ArrowHead1DeltaY + "), (" + ArrowHead2DeltaX + ", " + ArrowHead2DeltaY + ")");
 					
 					//Add custom event to action with arrow head data
 					this.action.events.push({
 						x: x,
 						y: y,
-						ArrowHead1X: ArrowHead1X,
-						ArrowHead1Y: ArrowHead1Y,
-						ArrowHead2X: ArrowHead2X,
-						ArrowHead2Y: ArrowHead2Y,
+						ArrowHead1X: ArrowHead1DeltaX,
+						ArrowHead1Y: ArrowHead1DeltaY,
+						ArrowHead2X: ArrowHead2DeltaX,
+						ArrowHead2Y: ArrowHead2DeltaY,
 						event: "ArrowHead"
 					});
 				}
