@@ -1,6 +1,6 @@
 //------------ LavaDraw ------------ 
 	//Info: A set of Sketch.js tools by LavaSnake. LavaDraw was written for use by cptconundrum in the Sketch.js mod for PA casters.
-	//Version: 1.2
+	//Version: 1.3
 	//URL: https://github.com/pamods/LavaSnake-s-Mods/tree/master/LavaDraw%20(Sketch.js%20Tools)
 	//Included Tools: "arrow" A basic arrow with an auto-added head, "stamp" An image stamp with a changeable image setting
 
@@ -79,14 +79,12 @@ $.sketch.tools.arrow = {
 							//Arrow is flipped on X axis
 							ArrowHead1DeltaX = -ArrowHead1DeltaX;
 							ArrowHead2DeltaX = -ArrowHead2DeltaX;
-							console.log("flip!");
 						}
 					} else {
 						if (ArrowHead1DeltaX < 0 && ArrowHead2DeltaX < 0) {
 							//Arrow is flipped on X axis
 							ArrowHead1DeltaX = -ArrowHead1DeltaX;
 							ArrowHead2DeltaX = -ArrowHead2DeltaX;
-							console.log("flip!");
 						}
 					}
 					if (deltaY > 0) {
@@ -94,19 +92,14 @@ $.sketch.tools.arrow = {
 							//Arrow is flipped on Y axis
 							ArrowHead1DeltaY = -ArrowHead1DeltaY;
 							ArrowHead2DeltaY = -ArrowHead2DeltaY;
-							console.log("flip!");
 						}
 					} else {
 						if (ArrowHead1DeltaY < 0 && ArrowHead2DeltaY < 0) {
 							//Arrow is flipped on Y axis
 							ArrowHead1DeltaY = -ArrowHead1DeltaY;
 							ArrowHead2DeltaY = -ArrowHead2DeltaY;
-							console.log("flip!");
 						}
 					}
-					
-					console.log(ArrowRad + " - " + ArrowHead1Rad + ", " + ArrowHead2Rad);
-					console.log("(" + ArrowHead1DeltaX + ", " + ArrowHead1DeltaY + "), (" + ArrowHead2DeltaX + ", " + ArrowHead2DeltaY + ")");
 					
 					//Add custom event to action with arrow head data
 					this.action.events.push({
@@ -208,6 +201,62 @@ $.sketch.tools.stamp = {
 
             previous = event;
         }
+        return this.context.stroke();
+    }
+};
+
+//Circle, click and drag to set the radius
+$.sketch.tools.circle = {
+    onEvent: function(e) {
+        switch (e.type) {
+            case 'mousedown':
+            case 'touchstart':
+                this.startPainting();
+                break;
+            case 'mouseup':
+            case 'mouseout':
+            case 'mouseleave':
+            case 'touchend':
+            case 'touchcancel':
+				this.stopPainting();
+        }
+        if (this.painting) {
+			//Save original xy if first time
+			if (!this.action.events[0]) {
+				this.action.events[0] = ({
+					x: e.pageX - this.canvas.offset().left,
+					y: e.pageY - this.canvas.offset().top,
+					event: e.type
+				});
+			}
+			
+			//Calculate stuffs
+			var deltaX = (e.pageX - this.canvas.offset().left) - this.action.events[0].x;
+			var deltaY = (e.pageY - this.canvas.offset().top) - this.action.events[0].y;
+			var radius = Math.sqrt((deltaX * deltaX) + (deltaY * deltaY));
+			
+            this.action.events[0] = ({
+                x: this.action.events[0].x,
+                y: this.action.events[0].y,
+				r: radius,
+                event: e.type
+            });
+            return this.redraw();
+        }
+    },
+    draw: function(action) {
+        var event, previous, _i, _len, _ref;
+        _ref = action.events;
+        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+            event = _ref[_i];
+
+			this.context.beginPath();
+			this.context.arc(event.x, event.y, event.r, 0, 2 * Math.PI);
+
+            previous = event;
+        }
+		this.context.strokeStyle = action.color;
+		this.context.lineWidth = action.size;
         return this.context.stroke();
     }
 };
