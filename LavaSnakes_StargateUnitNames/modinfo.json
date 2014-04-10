@@ -1,0 +1,33 @@
+{
+    "context": "client",
+    "identifier": "com.pa.LavaSnake.StargateUnitNames",
+    "display_name": "Stargate Unit Names",
+    "description": "Ever wanted to command legions of Jaffa warriors, smarms of Abrams tanks, or fleets of X-302s? Well now you can with the Stargate Unit Names mod!",
+    "author": "LavaSnake",
+    "version": "1.0",
+    "build": "63475",
+    "date": "2014/04/10",
+    "signature": "not yet implemented",
+    "forum": "https://forums.uberent.com/threads/rel-stargate-unit-names-63475.58651/",
+    "category": [
+        "in-game",
+        "ui"
+    ],
+    "id": "LavaSnakes_StargateUnitNames",
+    "priority": 101,
+    "live_game": [
+        "coui://ui/mods/LavaSnakes_StargateUnitNames/Units.js"
+    ],
+    "live_game_hover": [
+        "coui://ui/mods/LavaSnakes_StargateUnitNames/Units.js"
+    ],
+    "settings": [
+        "coui://ui/mods/LavaSnakes_StargateUnitNames/Settings.js"
+    ],
+    "requires": [
+        "rSettingsManager",
+        "LavaSnakes_CustomUnitNames"
+    ],
+    "icon": "http://pamods.github.io/icons/StargateBugFix.png",
+    "enabled": true
+}

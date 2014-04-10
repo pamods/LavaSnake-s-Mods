@@ -146,7 +146,6 @@ $(document).ready(function () {
 			}
 			payload.name = name;
 			//</custom unit names code>
-			console.log(payload);
 			
             model.worldHoverTarget(new WorldUnitHoverModel(payload));
 		}
