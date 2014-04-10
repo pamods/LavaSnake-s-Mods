@@ -4,9 +4,9 @@
     "display_name": "Custom Unit Names",
     "description": "Lets you set your own custom names for each unit and building in the settings menu.",
     "author": "LavaSnake",
-    "version": "1.3",
+    "version": "1.4",
     "build": "63475",
-    "date": "2014/04/06",
+    "date": "2014/04/10",
     "signature": "not yet implemented",
     "forum": "https://forums.uberent.com/threads/rel-custom-unit-names-59549.56124/",
     "category": [
@@ -18,12 +18,15 @@
     "live_game": [
         "coui://ui/mods/LavaSnakes_CustomUnitNames/Renamer.js"
     ],
+    "live_game_hover": [
+        "coui://ui/mods/LavaSnakes_CustomUnitNames/Renamer.js"
+    ],
     "settings": [
         "coui://ui/mods/LavaSnakes_CustomUnitNames/Settings.js"
     ],
     "requires": [
         "rSettingsManager"
     ],
-	"icon": "http://pamods.github.io/icons/UnitRenamer.png",
+    "icon": "http://pamods.github.io/icons/UnitRenamer.png",
     "enabled": true
 }
