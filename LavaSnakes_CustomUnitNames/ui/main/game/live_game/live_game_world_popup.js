@@ -63,6 +63,25 @@ $(document).ready(function () {
         /* end setup */
 
         self.name(object.name);
+		
+		//<custom unit names code>
+		if (object.tool_details.weapon_target_name) {
+			for (index = 0; index < model.LUnitNames.RulesArray.length; ++index) {
+				var RealName = model.LUnitNames.RulesArray[index].split(" > ")[0];
+				var NewName = model.LUnitNames.RulesArray[index].split(" > ")[1];
+
+				object.tool_details.weapon_target_name = object.tool_details.weapon_target_name.replace(new RegExp(RealName, "g"), NewName);
+			}
+		}
+		if (object.tool_details.build_target_name) {
+			for (index = 0; index < model.LUnitNames.RulesArray.length; ++index) {
+				var RealName = model.LUnitNames.RulesArray[index].split(" > ")[0];
+				var NewName = model.LUnitNames.RulesArray[index].split(" > ")[1];
+
+				object.tool_details.build_target_name = object.tool_details.build_target_name.replace(new RegExp(RealName, "g"), NewName);
+			}
+		}
+		//</custom unit names code>
 
         self.healthFraction((object && object.health && object.health.max) ? object.health.current / object.health.max : 0);
         self.isDead(self.healthFraction() <= 0);
