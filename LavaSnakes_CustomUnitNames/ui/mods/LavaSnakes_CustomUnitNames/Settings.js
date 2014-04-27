@@ -58,15 +58,14 @@ model.LUnitNames_Edit = function () {
 		$("#LUnitNames_ConfigSpan").html(
 			'<div style="position: absolute; background: rgba(0,0,0,.5); left: 0px; top: 00px; right: 0px; bottom: 0px;" />' +
 			'<div style="margin: 0px auto; position: absolute; background: rgba(0,0,0,.5); padding: 10px; left: 20px; top: 200px; right: 20px; height: 300px; width: 270px; border: 1px solid rgba(255,255,255,.1); border-radius: 4px;">' +
-				'<div style="margin: 0px 0px 4px 0px; font-weight: bold; font-size: 1.2em;"> Edit Rule: ' + 
-					'<a data-bind="click_sound: \'default\'" onclick="model.LUnitNames_DoneEdit()"><img style="float:right;" src="../../main/shared/img/close_btn.png"></a>' +
-				'</div>' +
+				'<div style="margin: 0px 0px 4px 0px; font-weight: bold; font-size: 1.2em;"> Edit Rule: </div>' +
 				'<p>Real Name: <br />' +
 					'<input style="width: 245px;" type="text" value="' + RealName + '" id="LUnitNames_RealName">' +
 				'</p>' +
 				'<p>New Name: <br />' +
 					'<input style="width: 245px;" type="text" value="' + NewName + '" id="LUnitNames_NewName">' +
 				'</p>' +
+				'<input type="Button" class="settings_button" onclick="model.LUnitNames_DoneEdit()" value="Done">' +
 			'</div>');
 			
 		console.log("LUnitNames: Editing");
