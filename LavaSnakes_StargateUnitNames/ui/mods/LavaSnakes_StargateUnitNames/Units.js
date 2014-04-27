@@ -1,3 +1,5 @@
+var LUnitNames_AppendedRulesArray;
+
 (function () {
 	var Names = "Orbital Launcher > NASA Construction Center~" +
 					"Nuclear Missile Launcher > Nuclear Missile Launch Site~" +
@@ -50,7 +52,7 @@
 					"SXX-1304 Laser Platform > Heavy Laser Satellite~" +
 					"Teleporter > Stargate";
 
-	model.LUnitNames.RulesArray = model.LUnitNames.RulesArray.concat(Names.split("~"));
+	LUnitNames_AppendedRulesArray = Names.split("~");
 	
 	console.log("LStargateUnitNames: Extension complete");
 })();

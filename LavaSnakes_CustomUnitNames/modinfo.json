@@ -17,17 +17,68 @@
     "priority": 100,
     "scenes": {
 		"live_game": [
-			"coui://ui/mods/LavaSnakes_CustomUnitNames/Renamer_live_game.js"
+			"coui://ui/mods/LavaSnakes_CustomUnitNames/Renamer_live_game.js",
+			"coui://ui/mods/LavaSnakes_CustomUnitNames/Renamer_rBIF.js"
 		],
 		"live_game_hover": [
-			"coui://ui/mods/LavaSnakes_CustomUnitNames/Renamer_live_game_world_popup.js"
+			"coui://ui/mods/LavaSnakes_CustomUnitNames/Renamer_live_game_world_popup.js",
+			"coui://ui/mods/LavaSnakes_CustomUnitNames/Renamer_rBIF.js"
 		],
 		"settings": [
-			"coui://ui/mods/LavaSnakes_CustomUnitNames/Settings.js"
+			"coui://ui/mods/LavaSnakes_CustomUnitNames/Settings.js",
+			"coui://ui/mods/LavaSnakes_CustomUnitNames/Renamer_rBIF.js"
 		],
 		"start": [
 			"coui://ui/mods/LavaSnakes_CustomUnitNames/Renamer_rBIF.js"
-		]
+		],		
+		"armory": [
+			"coui://ui/mods/LavaSnakes_CustomUnitNames/Renamer_rBIF.js"
+        ],
+        "building_planets": [
+			"coui://ui/mods/LavaSnakes_CustomUnitNames/Renamer_rBIF.js"
+        ],
+        "connect_to_game": [
+            "coui://ui/mods/LavaSnakes_CustomUnitNames/Renamer_rBIF.js"
+        ],
+        "game_over": [
+            "coui://ui/mods/LavaSnakes_CustomUnitNames/Renamer_rBIF.js"
+        ],
+        "icon_atlas": [
+            "coui://ui/mods/LavaSnakes_CustomUnitNames/Renamer_rBIF.js"
+        ],
+        "load_planet": [
+            "coui://ui/mods/LavaSnakes_CustomUnitNames/Renamer_rBIF.js"
+        ],
+        "lobby": [
+            "coui://ui/mods/LavaSnakes_CustomUnitNames/Renamer_rBIF.js"
+        ],
+        "matchmaking": [
+            "coui://ui/mods/LavaSnakes_CustomUnitNames/Renamer_rBIF.js"
+        ],
+        "new_game": [
+            "coui://ui/mods/LavaSnakes_CustomUnitNames/Renamer_rBIF.js"
+        ],
+        "server_browser": [
+            "coui://ui/mods/LavaSnakes_CustomUnitNames/Renamer_rBIF.js"
+        ],
+        "special_icon_atlas": [
+            "coui://ui/mods/LavaSnakes_CustomUnitNames/Renamer_rBIF.js"
+        ],
+        "system_editor": [
+            "coui://ui/mods/LavaSnakes_CustomUnitNames/Renamer_rBIF.js"
+        ],
+        "transit": [
+            "coui://ui/mods/LavaSnakes_CustomUnitNames/Renamer_rBIF.js"
+        ],
+        "social": [
+            "coui://ui/mods/LavaSnakes_CustomUnitNames/Renamer_rBIF.js"
+        ],
+        "replay_browser": [
+            "coui://ui/mods/LavaSnakes_CustomUnitNames/Renamer_rBIF.js"
+        ],
+        "live_game_econ": [
+            "coui://ui/mods/LavaSnakes_CustomUnitNames/Renamer_rBIF.js"
+        ]
     },
     "requires": [
         "rSettingsManager"
