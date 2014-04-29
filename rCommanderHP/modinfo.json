@@ -1,0 +1,32 @@
+{
+    "context": "client",
+    "identifier": "com.pa.raevn.rcommanderhp",
+    "display_name": "Commander Health Display",
+    "description": "Adds a display to the UI that tracks your commander's health and more.",
+    "author": "raevn, danzel, burntcustard, PRoeleert, LavaSnake",
+    "version": "3.0",
+    "build": "WIP",
+    "date": "2014/04/29",
+    "signature": "not yet implemented",
+    "forum": "https://forums.uberent.com/threads/wip-commander-hud-v3.59137/",
+    "category": [
+        "in-game",
+        "ui"
+    ],
+    "id": "rCommanderHP",
+    "priority": 100,
+    "live_game": [
+        "coui://ui/mods/rCommanderHP/rCommanderHP.css",
+        "coui://ui/mods/rCommanderHP/rCommanderHP.js",
+        "coui://ui/main/game/live_game/live_game_econ.css"
+    ],
+    "settings": [
+        "coui://ui/mods/rCommanderHP/rCommanderHP_settings.js"
+    ],
+    "requires": [
+        "rFloatFrame",
+        "rSettingsManager",
+        "rBlueprintInfoFramework"
+    ],
+    "enabled": true
+}
