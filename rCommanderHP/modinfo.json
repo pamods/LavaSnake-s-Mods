@@ -1,12 +1,12 @@
 {
     "context": "client",
     "identifier": "com.pa.raevn.rcommanderhp",
-    "display_name": "Commander Health Display",
-    "description": "Adds a display to the UI that tracks your commander's health and more.",
-    "author": "raevn, danzel, burntcustard, PRoeleert, LavaSnake",
-    "version": "3.0",
+    "display_name": "Commander HUD",
+    "description": "Adds HUD that tracks your commander's health and more!",
+    "author": "LavaSnake, raevn, danzel, burntcustard, PRoeleert",
+    "version": "3.WIP",
     "build": "WIP",
-    "date": "2014/04/29",
+    "date": "WIP",
     "signature": "not yet implemented",
     "forum": "https://forums.uberent.com/threads/wip-commander-hud-v3.59137/",
     "category": [
