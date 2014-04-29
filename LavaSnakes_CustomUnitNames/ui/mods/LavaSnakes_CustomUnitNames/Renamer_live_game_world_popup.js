@@ -10,6 +10,9 @@
 		console.log("LUnitNames: Found string, changing to array");
 		model.LUnitNames.RulesArray = window.localStorage.LUnitNames_Rules_List.split(",");
 	}
+	if (LUnitNames_AppendedRulesArray) {
+		model.LUnitNames.RulesArray = model.LUnitNames.RulesArray.concat(LUnitNames_AppendedRulesArray);
+	}
 
 
 	var oldhandlershover = handlers.hover;
