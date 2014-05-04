@@ -2,41 +2,35 @@
 	display: none;
 }
 
-.div_commander_bar
-{
-    margin: -2px 0px 0px 0px;
-    border-image:url(coui://ui/mods/rCommanderHP/img/img_status_bar_mono.png) 7 27 7 27;
-    border-width:7px 27px 7px 27px;
-    box-shadow:inset 100px 100px 100px 100px #0d0d0d;
+.div_commander_bar {
+	
+	border-image: url(coui://ui/main/shared/img/panel/img_menu_panel.png) 14 22 22 22;
+	border-width: 14px 22px 22px 22px;
+	box-shadow: inset 1000px 1000px 1000px 1000px #000;
 }
 
-.div_commander_bar_cont
-{
+.div_commander_bar_cont {
 	margin: 4px 0px 2px 0px;
 }
 
 .status_bar_commanderHP {
-    background-image: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    color-stop(0, #199919),
-    color-stop(1, #4FFF69)
-    );
+	background-image: -webkit-gradient(linear,
+										left bottom,
+										left top,
+										color-stop(0, #199919),
+										color-stop(1, #4FFF69));
 	height: 100%;
-    width: 75%;
+	width: 75%;
 }
 
 .status_bar_commanderLowHP {
-	background-image: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-	color-stop(0, #A20000),
-	color-stop(1, #FF0000)
-    );
+	background-image: -webkit-gradient(linear,
+										left bottom,
+										left top,
+										color-stop(0, #A20000),
+										color-stop(1, #FF0000));
 	height: 100%;
-    width: 75%;
+	width: 75%;
 }
 
 @-webkit-keyframes blink {
@@ -52,11 +46,11 @@
 }
 
 .commander_info_img {
-    display: block;
+	display: block;
 	width:43px;
 }
 
-.commander_info_img img{
+.commander_info_img img {
 	width: 70%;
 	height: auto;
 	margin: 0px -20px 2px 5px;
