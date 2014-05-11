@@ -3,9 +3,8 @@
 }
 
 .div_commander_bar {
-	
-	border-image: url(coui://ui/main/shared/img/panel/img_menu_panel.png) 14 22 22 22;
-	border-width: 14px 22px 22px 22px;
+	border-image: url(coui://ui/main/shared/img/panel/img_menu_panel.png) 14 19 15 19;
+	border-width: 14px 9px 12px 9px;
 	box-shadow: inset 1000px 1000px 1000px 1000px #000;
 }
 
@@ -54,4 +53,16 @@
 	width: 70%;
 	height: auto;
 	margin: 0px -20px 2px 5px;
+}
+
+.select_link_ComHP {
+	font-size: 12px;
+	margin: 2px 0px 0px 0px;
+	text-align: center;
+	width: 100%;
+	font-family: 'DINPRO-LIGHT';
+}
+
+.select_link_ComHP a:hover {
+	text-decoration: underline;
 }

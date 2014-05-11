@@ -3,10 +3,10 @@
     "identifier": "com.pa.raevn.rcommanderhp",
     "display_name": "Commander HUD",
     "description": "Adds HUD that tracks your commander's health and more!",
-    "author": "LavaSnake, raevn, danzel, burntcustard, PRoeleert",
-    "version": "3.WIP",
-    "build": "WIP",
-    "date": "WIP",
+    "author": "LavaSnake, raevn, and others",
+    "version": "3.0",
+    "build": "64498",
+    "date": "2014/5/11",
     "signature": "not yet implemented",
     "forum": "https://forums.uberent.com/threads/wip-commander-hud-v3.59137/",
     "category": [
@@ -28,5 +28,6 @@
         "rSettingsManager",
         "rBlueprintInfoFramework"
     ],
+    "icon": "http://pamods.github.io/icons/ComHUDIcon.png",
     "enabled": true
 }

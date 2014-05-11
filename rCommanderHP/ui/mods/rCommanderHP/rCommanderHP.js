@@ -9,17 +9,21 @@
 	var settings = decode(localStorage.settings);
 	model.commander_hp_display_show = ko.computed(function() { return settings['commander_hp_display_show'] == 'ALWAYS'});
 
-	createFloatingFrame('commander_info_frame', 265, 50, {'offset': 'topRight', 'left': -265});
+	createFloatingFrame('commander_info_frame', 240, 50, {'offset': 'topRight', 'left': -240});
 
 	$('#commander_info_frame_content').append(
-		'<div class="div_commander_bar" data-bind="visible: model.armySize() > 0 && (  model.armyAlertModel.commanderUnderAttackAlert.test(model.commanderHealth()) !== undefined || model.commander_hp_display_show())">' + //Only display commander info bar if player isn't dead (has more than 1 unit).
+		'<div class="div_commander_bar" data-bind="visible: model.armySize() > 0 && (model.armyAlertModel.commanderUnderAttackAlert.test(model.commanderHealth()) !== undefined || model.commander_hp_display_show())">' +
+			//Only display commander HUD if player isn't dead (has more than 1 unit) and either the commander is under attack or the show setting is set to always
 			'<div class="div_commander_bar_cont">' +
 			'<table>' +
 				'<tbody>' +
-					'<tr data-bind="click: function() { api.select.commander(); api.camera.track(true); }">' +
+					'<tr>' +
 						'<td>' +
-							'<div class="commander_info_img" >' +
-								'<img src="img/build_bar/units/imperial_delta.png"/>' +
+							'<div class="commander_info_img" data-bind="click: function() { api.select.commander(); api.camera.track(true); }">' +
+								'<img src="img/build_bar/units/quad_osiris.png"/>' +
+								'<div class="select_link_ComHP">' +
+									'<a>Select</a>' +
+								'</div>' +
 							'</div>' +
 						'</td>' +
 						'<td>' +
