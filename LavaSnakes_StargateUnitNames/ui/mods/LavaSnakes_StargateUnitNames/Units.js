@@ -15,11 +15,12 @@ var LUnitNames_AppendedRulesArray;
 					"Advanced Fabrication Vehicle > Construction Tank~" +
 					"Advanced Fabrication Aircraft > Construction VTOL Aircraft~" +
 					"Advanced Fabrication Bot Combat > Armored Construction Robot~" +
+					"Orbital Factory > Orbital Construction Center~" +
 					"Orbital Fabrication Bot > Construction Satellite~" +
 					"Commander > MALP v2~" +
 					"Skitter > Scout Jeep~" +
 					"Spinner > AA Truck~" +
-					"Unit Cannon > Abrams Tank~" +
+					"Scamper > Abrams Tank~" +
 					"Ant > Abrams Tank~" +
 					"Inferno > Flamethrower Abrams Tank~" +
 					"Leveler > Trinium Abrams Tank~" +
@@ -28,6 +29,7 @@ var LUnitNames_AppendedRulesArray;
 					"Boom > Replicator~" +
 					"Stinger > AA Jaffa Warrior~" +
 					"Dox > Jaffa Warrior~" +
+					"Grenadier > Artillery Jaffa Warrior~" +
 					"Slammer > Kull Warrior~" +
 					"Gil-E > US Army Sniper~" +
 					"Firefly > Scout Drone~" +
@@ -50,6 +52,8 @@ var LUnitNames_AppendedRulesArray;
 					"Anchor > Heavy Defense Satellite~" +
 					"Astraeus > Goa'uld cargo ship~" +
 					"SXX-1304 Laser Platform > Heavy Laser Satellite~" +
+					"ARKYD > Radar Satellite~" +
+					"Jellyfish > Sea Mine~" +
 					"Teleporter > Stargate";
 
 	LUnitNames_AppendedRulesArray = Names.split("~");
