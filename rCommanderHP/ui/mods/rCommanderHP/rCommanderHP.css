@@ -12,22 +12,20 @@
 	margin: 4px 0px 2px 0px;
 }
 
+.status_bar_frame_commanderHP {
+	border: 1px solid #D1D1D1;
+	border-radius: 0px;
+	height: 6px;
+	margin: -4px 0px 0px 0px;
+	width: 160px;
+}
+
 .status_bar_commanderHP {
 	background-image: -webkit-gradient(linear,
 										left bottom,
 										left top,
 										color-stop(0, #199919),
 										color-stop(1, #4FFF69));
-	height: 100%;
-	width: 75%;
-}
-
-.status_bar_commanderLowHP {
-	background-image: -webkit-gradient(linear,
-										left bottom,
-										left top,
-										color-stop(0, #A20000),
-										color-stop(1, #FF0000));
 	height: 100%;
 	width: 75%;
 }
@@ -42,6 +40,8 @@
 	float: right;
 	margin-right: 2px;
 	-webkit-animation: blink 1s ease-in alternate infinite;
+	margin: 5px;
+	font-size: 11px;
 }
 
 .commander_info_img {

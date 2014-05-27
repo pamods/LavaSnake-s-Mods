@@ -1,1 +1,1 @@
-model.addSetting_DropDown("SHOW HUD", "commander_hp_display_show", "UI", ["ALWAYS", "UNDER ATTACK"], 0, "Commander HUD");
+model.addSetting_DropDown("HUD Commander Icon", "commander_hp_icon", "UI", ["Progenitor", "Alpha", "Theta", "Invictus/Delta", "Centurion", "Rallus", "Aeson", "Osiris", "Nemicus"], 0, "Commander HUD");
