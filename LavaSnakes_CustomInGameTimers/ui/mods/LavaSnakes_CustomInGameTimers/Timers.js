@@ -31,6 +31,7 @@ var LTimers = (function () {
 
 	//Set up Timers and GUI
 	createFloatingFrame("InGameTimersDiv", 175, 150, {'top': 250});
+	$("#InGameTimersDiv").css("margin", "3px");
 	$('body').append('<span id="TimerLTimers_ConfigSpan"></span>');
 
 	document.getElementById('InGameTimersDiv_content').innerHTML += '<p><input type="button" oncontextmenu="LTimers_Config(1);" id="Timer1" data-bind="click: function (data, event) { LTimers_TimerClick(1); }" value="Timer 1" /></p>';
@@ -225,9 +226,7 @@ function LTimers_Config(Which) {
 	//Show dialog
 	document.getElementById('TimerLTimers_ConfigSpan').innerHTML = 
 		'<div style="margin: 0px auto; position: absolute; background: rgba(0,0,0,.5); padding: 10px; left: 20px; top: 200px; right: 20px; height: 300px; width: 250px; border: 1px solid rgba(255,255,255,.1);	border-radius: 4px;">' +
-			'<div style="margin: 0px 0px 4px 0px; font-weight: bold; font-size: 1.2em;"> COnNIGURATION FOR TIMER ' + Which + 
-				'<a data-bind="click_sound: \'default\'" onclick="document.getElementById(\'TimerLTimers_ConfigSpan\').innerHTML = \'\';"><img style="float:right;" src="../../main/shared/img/close_btn.png"></a>' +
-			'</div>' +
+			'<div style="margin: 0px 0px 4px 0px; font-weight: bold; font-size: 1.2em;"> CONNIGURATION FOR TIMER ' + Which + '</div>' +
 			'<p>Mode: ' +
 				'<select onchange="window.localStorage.LTimers_Timer' + Which + 'Type = this.options[this.selectedIndex].value;">' +
 					Types +
@@ -239,6 +238,7 @@ function LTimers_Config(Which) {
 			'<p>Text to display when done: ' +
 				'<input style="width: 75px;" type="text" value="' + Alert + '" onchange="window.localStorage.LTimers_Timer' + Which + 'Alert = this.value">' +
 			'</p>' +
+			'<input type="Button" class="settings_button" onclick="document.getElementById(\'TimerLTimers_ConfigSpan\').innerHTML = \'\';" value="Done">' +
 		'</div>';
 }
 
