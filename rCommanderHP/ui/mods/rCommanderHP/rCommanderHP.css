@@ -36,7 +36,7 @@
 	100%	{color: #FF0000}
 }
 
-.warning {
+.warning_ComHP {
 	float: right;
 	margin-right: 2px;
 	-webkit-animation: blink 1s ease-in alternate infinite;

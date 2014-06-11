@@ -43,7 +43,7 @@
 									'</div>' +
 									'<div class="status_stats">' +
 										'<span data-bind="text: parseInt(model.commanderHealth() * 12500)"></span>/12500' +
-										'<br /><span class="warning" data-bind="visible: model.commander_hp_DoPanic()">WARNING, LOW HEALTH!</span>' +
+										'<br /><span class="warning_ComHP" data-bind="visible: model.commander_hp_DoPanic()">WARNING, LOW HEALTH!</span>' +
 									'</div>' +
 								'</div>' +
 							'</td>' +
