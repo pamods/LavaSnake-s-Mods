@@ -4,16 +4,15 @@
     "display_name": "Ant Name Bug Fix",
     "description": "PA has a bug that prevents it from displaying the Ant's proper name; this mod fixes that.",
     "author": "LavaSnake",
-    "version": "1.0",
-    "build": "63475",
-    "date": "2014/03/27",
+    "version": "1.1",
+    "build": "71937",
+    "date": "2014/09/15",
     "signature": "not yet implemented",
     "forum": "https://forums.uberent.com/threads/rel-ant-name-bug-fix-63475.58349/",
     "category": [
         "In-game",
         "ui"
     ],
-    "id": "LavaSnakes_Ant",
     "priority": 100,
     "icon": "http://pamods.github.io/icons/AntIcon.png",
     "enabled": true
