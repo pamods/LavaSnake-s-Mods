@@ -4,16 +4,15 @@
     "display_name": "ProfilePic+",
     "description": "A powerful mod that lets you set a profile picture, a tracking/sig picture, and custom HTML snippets for PA's main menu.",
     "author": "LavaSnake",
-    "version": "2.2",
-    "build": "62857",
-    "date": "2014/03/23",
+    "version": "2.3",
+    "build": "72996",
+    "date": "2014/10/08",
     "signature": "not yet implemented",
     "forum": "https://forums.uberent.com/threads/rel-profile-pic-fixer-56387.53531/",
     "category": [
         "Main Menu",
         "ui"
     ],
-    "id": "LavaSnakes_ProfilePicFixer",
     "priority": 100,
     "start": [
         "coui://ui/mods/LavaSnakes_ProfilePicFixer/ProfilePicFixer.js"
@@ -21,9 +20,6 @@
     "settings": [
         "coui://ui/mods/LavaSnakes_ProfilePicFixer/Settings.js"
     ],
-    "requires": [
-        "rSettingsManager"
-    ],
-    "icon": "http://pamods.github.io/icons/ProfilePicFixer.png",
+    "icon": "https://raw.githubusercontent.com/pamods/LavaSnake-s-Mods/master/Releases%20and%20Icons/ProfilePicPlus.png",
     "enabled": true
 }

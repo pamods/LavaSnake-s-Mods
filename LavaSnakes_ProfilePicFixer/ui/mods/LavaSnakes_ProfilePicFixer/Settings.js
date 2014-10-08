@@ -1,6 +1,12 @@
+/* --- Code to be rewritten once the settings are fixed ---
+
+	"dependencies": [
+		"com.pa.gtc.settingsmanager"
+	],
+
 (function () {
 	console.log("LProfilePic: Checking passed value");
-	if (window.localStorage.LProfilePic_displayName != "") {
+	if (window.localStorage.LProfilePic_DisplayName != "") {
 		//User is signed in
 		console.log("LProfilePic: Adding UI");
 		model.addSetting_Text("URL of Profile Pic:", "LProfilePic_URL", "UI", "Text", "", "ProfilePic+ Settings");
@@ -16,7 +22,7 @@
 })();
 
 model.LProfilePic_GetPicURL = function () {
-	var Username = window.localStorage.LProfilePic_displayName;
+	var Username = window.localStorage.LProfilePic_DisplayName;
 	var xhr = new XMLHttpRequest();
 	xhr.open("GET", "https://forums.uberent.com/members/?username=" + Username, false);
 	xhr.send();
@@ -54,3 +60,4 @@ model.LProfilePic_GetPSLadder = function () {
 		console.log("LProfilePic: Ladder pic URL found: " + decode(localStorage.settings).LProfilePic_Sig);
 	}
 }
+*/
