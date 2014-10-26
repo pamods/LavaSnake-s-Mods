@@ -4,22 +4,23 @@
     "display_name": "Customizable In-Game Timers",
     "description": "Three customizable in-game timers for reminders and other events. (See forum link for screenshots and instructions.)",
     "author": "LavaSnake",
-    "version": "1.8",
-    "build": "66567",
-    "date": "2014/5/26",
+    "version": "1.9",
+    "build": "72996",
+    "date": "2014/10/15",
     "signature": "not yet implemented",
     "forum": "https://forums.uberent.com/threads/rel-customizable-in-game-timers-56387.53544/",
     "category": [
         "in-game",
         "ui"
     ],
-    "id": "LavaSnakes_CustomInGameTimers",
     "priority": 100,
-    "live_game": [
-        "coui://ui/mods/LavaSnakes_CustomInGameTimers/Timers.js"
-    ],
-    "requires": [
-        "rFloatFrame"
+	"scenes": {
+        "LiveGame_FloatZone": [
+            "coui://ui/mods/LavaSnakes_CustomInGameTimers/Timers.js"
+        ]
+	},
+    "dependencies": [
+        "com.pa.raevn.rfloatframe"
     ],
     "enabled": true
 }

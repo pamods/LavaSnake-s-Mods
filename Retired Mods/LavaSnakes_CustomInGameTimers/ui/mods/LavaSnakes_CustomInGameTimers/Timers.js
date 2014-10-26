@@ -31,7 +31,7 @@ var LTimers = (function () {
 
 	//Set up Timers and GUI
 	createFloatingFrame("InGameTimersDiv", 175, 150, {'top': 250});
-	$("#InGameTimersDiv").css("margin", "3px");
+	$("#InGameTimersDiv_content").css("margin", "3px");
 	$('body').append('<span id="TimerLTimers_ConfigSpan"></span>');
 
 	document.getElementById('InGameTimersDiv_content').innerHTML += '<p><input type="button" oncontextmenu="LTimers_Config(1);" id="Timer1" data-bind="click: function (data, event) { LTimers_TimerClick(1); }" value="Timer 1" /></p>';
