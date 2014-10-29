@@ -1,0 +1,15 @@
+.drag_main {
+	position: absolute;
+}
+
+.div_drag_cont {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.div_drag_cont_inner {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}

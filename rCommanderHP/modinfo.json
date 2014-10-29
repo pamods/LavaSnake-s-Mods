@@ -4,28 +4,25 @@
     "display_name": "Commander HUD",
     "description": "Adds a HUD that tracks your commander's health and more!",
     "author": "LavaSnake, raevn, and others",
-    "version": "3.2",
-    "build": "66567",
-    "date": "2014/6/11",
+    "version": "3.3WIP",
+    "build": "72996",
+    "date": "2014/10/29",
     "signature": "not yet implemented",
     "forum": "https://forums.uberent.com/threads/wip-commander-hud-v3.59137/",
     "category": [
         "in-game",
         "ui"
     ],
-    "id": "rCommanderHP",
     "priority": 100,
-    "live_game": [
-        "coui://ui/mods/rCommanderHP/rCommanderHP.css",
-        "coui://ui/mods/rCommanderHP/rCommanderHP.js"
-    ],
-    "settings": [
-        "coui://ui/mods/rCommanderHP/rCommanderHP_settings.js"
-    ],
-    "requires": [
-        "rFloatFrame",
-        "rSettingsManager"
-    ],
+	"scenes": {
+		"LiveGame_FloatZone": [
+			"coui://ui/mods/rCommanderHP/rCommanderHP.css",
+			"coui://ui/mods/rCommanderHP/rCommanderHP.js"
+		]
+	},
     "icon": "http://pamods.github.io/icons/ComHUDIcon.png",
-    "enabled": true
+    "enabled": true,
+    "dependencies": [
+        "com.pa.raevn.rfloatframe"
+    ]
 }

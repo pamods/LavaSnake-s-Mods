@@ -2,10 +2,12 @@
 	display: none;
 }
 
-.div_commander_bar {
-	border-image: url(coui://ui/main/shared/img/panel/img_menu_panel.png) 14 19 15 19;
-	border-width: 14px 9px 12px 9px;
-	box-shadow: inset 1000px 1000px 1000px 1000px #000;
+.div_commander_bar {	
+	background: url('coui://ui/mods/rCommanderHP/img_bground.png') top center no-repeat;
+	background-size: contain;
+	padding-top: 10px;
+	padding-bottom: 20px;
+	height: 81px;
 }
 
 .div_commander_bar_cont {
@@ -16,7 +18,6 @@
 	border: 1px solid #D1D1D1;
 	border-radius: 0px;
 	height: 6px;
-	margin: -4px 0px 0px 0px;
 	width: 160px;
 }
 
@@ -46,7 +47,8 @@
 
 .commander_info_img {
 	display: block;
-	width:43px;
+	width: 43px;
+	margin: -10px 0px 0px 10px;
 }
 
 .commander_info_img img {
