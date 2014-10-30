@@ -1,7 +1,8 @@
-$(function () {
+(function() {
 	createFloatingFrame('commander_info_frame', 240, 50, {'offset': 'topRight', 'left': -240});
 	
-	model.commanderHealth = ko.observable(1);
+	model.commanderHealth = ko.observable(0);
+	addLinkageLiveGame("model.commanderHealth()", "model.commanderHealth");
 	model.commander_hp_DoPanic = ko.computed(function() {
 		if (model.commanderHealth() <= .5) {
 			return true;
@@ -40,8 +41,4 @@ $(function () {
 				'</table>' +
 			'</div>' +
 		'</div>');
-		
-	var toLiveGame = { funct: function () { console.log("test"); } };
-	toLiveGame.funct();
-	//RunLiveGame(toLiveGame);
-});
+})();
