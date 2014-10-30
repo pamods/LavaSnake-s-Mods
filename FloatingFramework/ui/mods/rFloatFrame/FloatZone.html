@@ -5,27 +5,9 @@
 		<noloc><title>Live Game: FloatZone Panel - Used by floating framework</title></noloc>
 		<link href="coui://ui/main/shared/css/global.css" rel="stylesheet" type="text/css" />
 		<script src="coui://ui/main/shared/js/common.js" type="text/javascript"></script>
+		<script src="coui://ui/mods/rFloatFrame/FloatZone.js" type="text/javascript"></script>
 	</head>
 	<body style="background-image: none;">
 		<!-- Floating frames get added here -->
-		<script>			
-			// inject mod code
-			if (scene_mod_list['LiveGame_FloatZone']) { loadMods(scene_mod_list['LiveGame_FloatZone']); }
-			console.log("LiveGame_FloatZone mods loaded");
-			
-			//Make KO happy
-			$(function () { ko.applyBindings(); });
-			
-			//Set up for cross-panel stuff
-			function RunLiveGame(Code) {
-				api.Panel.message(api.Panel.parentId, Code);
-			}
-			
-			var handlers = {};
-			handlers.LiveGame_FloatZone = function(Code) {
-				Code.funct();
-				console.log("Message received from LiveGame");
-			};
-		</script>
 	</body>
 </html>

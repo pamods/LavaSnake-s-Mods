@@ -1,3 +1,4 @@
+//Add the FloatZone panel
 $(function () {
 	var $panel = $("<panel id='LiveGame_FloatZone'></panel>").css({
 		visibility: "visible",
@@ -13,14 +14,18 @@ $(function () {
     api.Panel.bindElement($panel[0]);
 	//Delayed so the positioning works out right
 	$panel.css("display", "flex");
-
-	//Set up for cross-panel stuff
-	handlers.LiveGame = function(Code) {
-		Code.funct();
-		console.log("Message received from LiveGame_FloatZone");
-	};
 });
 
-function SendBack(Code) {
-	api.panels.LiveGame_FloatZone.message("LiveGame_FloatZone", Code);
-}
+//Listen for messages from FloatZone and reply to them
+handlers.floatmessage = function(payload) {
+	payload.result = eval(payload.eval);
+	api.panels.LiveGame_FloatZone.message("floatmessage", payload);
+	
+	//Add linkage if requested to send future changes
+	if (payload.linkage) {
+		eval(payload.eval.replace("()", "")).subscribe(function(newValue) {
+			payload.result = newValue;
+			api.panels.LiveGame_FloatZone.message("floatmessage", payload);
+		});
+	}
+};

@@ -1,27 +1,27 @@
 {
-    "context": "client",
-    "identifier": "com.pa.raevn.rfloatframe",
-    "display_name": "Floating Framework",
-    "description": "Framework for creating draggable UI containers",
-    "author": "raevn, LavaSnake",
-    "version": "1.3WIP",
-    "build": "72996",
-    "date": "2014/10/29",
-    "signature": "not yet implemented",
-    "forum": "https://forums.uberent.com/threads/rel-floating-framework-v1-0-58197.54586/",
-    "category": [
-        "framework",
-        "ui"
-    ],
-    "priority": 20,
-    "global_mod_list": [
-        "coui://ui/mods/rFloatFrame/rFloatFrame.css",
-        "coui://ui/mods/rFloatFrame/rFloatFrame.js"
-    ],
+	"context": "client",
+	"identifier": "com.pa.raevn.rfloatframe",
+	"display_name": "Floating Framework",
+	"description": "Framework for creating draggable UI containers",
+	"author": "LavaSnake, raevn, wondible",
+	"version": "2.0",
+	"build": "73737",
+	"date": "2014/10/30",
+	"signature": "not yet implemented",
+	"forum": "https://forums.uberent.com/threads/rel-floating-framework-v1-0-58197.54586/",
+	"category": [
+		"framework",
+		"ui"
+	],
+	"priority": 20,
+	"global_mod_list": [
+		"coui://ui/mods/rFloatFrame/rFloatFrame.css",
+		"coui://ui/mods/rFloatFrame/rFloatFrame.js"
+	],
 	"scenes": {
 		"live_game": [
 			"coui://ui/mods/rFloatFrame/LiveGamePrep.js"
 		]
 	},
-    "enabled": true
+	"enabled": true
 }

@@ -70,13 +70,13 @@ function createFloatingFrame(id, width, height, options) {
 			'<div id="' + id + '_content" class="div_drag_cont" style="' + styleResize + '"></div>' +
 		'</div>');
 		
-    $('#' + id).draggable({
-        start: function(event, ui) {
-            ui.helper.bind("click.prevent",
-                function(event) { event.preventDefault(); });
-        },
-        stop: function(event, ui) {
-            setTimeout(function(){ui.helper.unbind("click.prevent");}, 300);
+	$('#' + id).draggable({
+		start: function(event, ui) {
+			ui.helper.bind("click.prevent",
+				function(event) { event.preventDefault(); });
+		},
+		stop: function(event, ui) {
+			setTimeout(function(){ui.helper.unbind("click.prevent");}, 300);
 				var position = {
 					'x': $(this).position().left, 
 					'y': $(this).position().top,
@@ -87,7 +87,7 @@ function createFloatingFrame(id, width, height, options) {
 				position.yPercent = Math.min(Math.max(position.yPercent, 0), 1);
 				
 				localStorage['frames_' + id] = encode(position);
-        },
+		},
 		'containment': options['containment'] ? options['containment'] : "body",
 		'snap': options['snap'] ? options['snap'] : true
 	});
