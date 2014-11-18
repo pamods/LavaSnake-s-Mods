@@ -4,11 +4,11 @@
 	"display_name": "Floating Framework",
 	"description": "Framework for creating draggable UI containers",
 	"author": "LavaSnake, raevn, wondible",
-	"version": "2.0",
+	"version": "2.1",
 	"build": "73737",
-	"date": "2014/10/30",
+	"date": "2014/11/18",
 	"signature": "not yet implemented",
-	"forum": "https://forums.uberent.com/threads/rel-floating-framework-v1-0-58197.54586/",
+	"forum": "https://forums.uberent.com/threads/rel-floating-framework-v2-0-73737.65658/",
 	"category": [
 		"framework",
 		"ui"

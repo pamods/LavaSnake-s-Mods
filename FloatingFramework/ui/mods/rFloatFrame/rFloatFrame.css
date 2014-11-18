@@ -1,5 +1,6 @@
 .drag_main {
 	position: absolute;
+	opacity: initial;
 }
 
 .div_drag_cont {
