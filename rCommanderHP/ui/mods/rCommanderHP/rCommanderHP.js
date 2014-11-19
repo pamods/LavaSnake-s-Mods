@@ -39,7 +39,7 @@
 						"</tr>" +
 					"</tbody>" +
 				"</table>" +
-				"<img id='commander_info_lock' src='' data-bind='click: model.commanderFrameLockEvent();' class='lock_icon'/>" +
+				"<img id='commander_info_lock' src='' data-bind='click: function() { model.commanderFrameLockEvent(); }' class='lock_icon'/>" +
 			"</div>" +
 		"</div>");
 	
@@ -58,4 +58,4 @@ model.commanderFrameLockEvent = function() {
 		$("#commander_info_lock").attr("src", "coui://ui/mods/rCommanderHP/lock-icon.png");
 		lockFrame("commander_info_frame");
 	}
-}
+};
