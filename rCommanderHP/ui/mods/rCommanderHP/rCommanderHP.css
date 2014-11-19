@@ -68,3 +68,10 @@
 .select_link_ComHP a:hover {
 	text-decoration: underline;
 }
+
+.lock_icon {
+	height: 20px;
+	position: absolute;
+	left: 199px;
+	bottom: 1px;
+}
