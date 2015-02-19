@@ -4,9 +4,9 @@
     "display_name": "Ant Name Bug Fix",
     "description": "PA has a bug that prevents it from displaying the Ant's proper name; this mod fixes that.",
     "author": "LavaSnake",
-    "version": "1.1",
-    "build": "71937",
-    "date": "2014/09/15",
+    "version": "1.2",
+    "build": "78071",
+    "date": "2015/02/19",
     "signature": "not yet implemented",
     "forum": "https://forums.uberent.com/threads/rel-ant-name-bug-fix-63475.58349/",
     "category": [
